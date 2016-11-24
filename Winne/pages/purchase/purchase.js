@@ -48,6 +48,7 @@ Page({
   onPay:function(){
     var date = new Date()
     wx.requestPayment({
+      //此 API 调用仅为示例，数据均无效
         'timeStamp': date.getTime(),
         'nonceStr': app.randomString(),
         'package': 'prepay_id=1',
