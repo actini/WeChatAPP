@@ -1,6 +1,6 @@
 /* login.wxss */
 .container {
-  background: url('../../avatar/background.jpeg') no-repeat;
+  background: url('https://romeo.wang/avatar/background.jpeg') no-repeat;
   background-size: 100% 100%;
   padding: 138rpx 0rpx;
 }

@@ -30,9 +30,9 @@ Page({
          url:"https://romeo.wang/login.php",
          data:e.detail.value,
          success:function(res){
-            if(res.data.errcode == 0){            
+            if(res.data.errcode == 0){
+                res.data.login = 1
                 app.globalData.userInfo=res.data
-                //console.log(app.globalData.userInfo)
                 wx.redirectTo({
                     url:'../index/index'
                 })
@@ -61,8 +61,9 @@ Page({
       success: function () {
         wx.getUserInfo({
           success: function (res) {
+            res.userInfo.login = 0
             app.globalData.userInfo=res.userInfo
-            //console.log(app.globalData.userInfo)
+            console.log(app.globalData.userInfo)
             wx.redirectTo({
                 url:'../index/index'
             })

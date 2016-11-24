@@ -9,7 +9,7 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "black",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "Winnie The Pool",
     "navigationBarTextStyle":"white"
   }

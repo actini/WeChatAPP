@@ -1,7 +1,13 @@
 <!--userinfo.wxml-->
 <view class="container">
   <view class="userinfo">
+  <text>{{userInfo.login}}</text>
+  <block wx:if="{{useInfo.login == 1}}">
+    <image class="userinfo-avatar" mode="aspectFit" src="{{userInfo.avatarUrl}}" background-size="cover" bindtap="changeAvatar"></image>
+  </block>
+  <block wx:else>
     <image class="userinfo-avatar" mode="aspectFit" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  </block>
     <text class="userinfo-items">昵称：{{userInfo.nickName}}</text>
     <text class="userinfo-items" wx:if="{{userInfo.gender == 0}}">性别：未知</text>
     <text class="userinfo-items" wx:elif="{{userInfo.gender == 1}}">性别：男</text>
