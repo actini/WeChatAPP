@@ -8,7 +8,6 @@ Page({
   },
   //事件处理函数
   onLoad: function () {
-    //console.log(app.globalData.userInfo);
     this.setData({
       userInfo:app.globalData.userInfo
     })

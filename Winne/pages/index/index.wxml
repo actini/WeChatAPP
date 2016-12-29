@@ -9,4 +9,6 @@
     <text class="user-motto">选购一款属于自己的 Winne The Pool !</text>
     <button class="startbut"  bindtap="onShop">马上开始！</button>
   </view>
+  <DIV>This is the firsh DIV</DIV>
+  <DIV>This is the second DIV</DIV>
 </view>
