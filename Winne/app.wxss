@@ -1,12 +1,18 @@
 /**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 130rpx 0;
-  box-sizing: border-box;
-  font-family: '微软雅黑';
-  background-color: #F8D019;
-} 
+page{
+  margin: 0rpx;
+  padding: 0rpx;
+  width: 100%;
+  font-family: "微软雅黑";
+  background: #efefef;
+  font-size: 1rem;
+}
+.font-big {
+  font-size: 1.25rem;
+}
+.font-mid {
+  font-size: 1rem;
+}
+.font-small {
+  font-size: 0.75rem;
+}

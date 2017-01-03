@@ -1,74 +1,87 @@
 //login.js
-
+var util = require('../../utils/util.js')
 var app = getApp()
-
 Page({
   data:{
-    // text:"这是一个页面"
-    toast:true,
-    remind:""
+    msg: null,
+    code: null,
+    wxlogin: null
   },
-  onLoad:function(){
-    // 页面初始化 options为页面跳转所带来的参数
-    if(app.globalData.userInfo != null){
-      wx.redirectTo({
-        url: '../index/index'
-      })
-    }
-  },
-  onUnload:function(){
-    // 页面关闭
-    this.setData({
-        username:"",
-        password:""
+  onLoad:function(options){
+    // 生命周期函数--监听页面加载
+    let that = this
+    // 微信用户登陆
+    wx.login({
+      success: function(res) {
+        if (res.code) {
+          that.setData({
+            code: res.code
+          })
+        } else {
+          that.setData({
+            msg: '微信登陆调用失败！',
+            wxlogin: true
+          })
+        }
+      },
+      fail: function(){
+        that.setData({
+          msg: "微信登陆调用失败！",
+          wxlogin: true
+        })
+      }
     })
   },
-  onSubmit:function(e){
-     // console.log(e.detail.value)
-     var that=this
-     wx.request({
-         url:"https://romeo.wang/login.php",
-         data:e.detail.value,
-         success:function(res){
-            if(res.data.errcode == 0){
-                res.data.login = 1
-                app.globalData.userInfo=res.data
-                wx.redirectTo({
-                    url:'../index/index'
-                })
-            }else{
-                //console.log(res.data)
-                that.setData({
-                    remind:res.data.errmsg
-                })
-            }
-         },
-         fail:function(){
-             this.setData({
-                 remind:'登陆失败，请重试1'
-             })
-         }
-     })
+  onReady:function(){
+    // 生命周期函数--监听页面初次渲染完成
+    
   },
-  onToast:function(){
-      this.setData({
-          toast:true
-      })
+  onShow:function(){
+    // 生命周期函数--监听页面显示
+    
   },
-  wxLogin:function(){
-    //调用登录接口
-    wx.login({
-      success: function () {
-        wx.getUserInfo({
-          success: function (res) {
-            res.userInfo.login = 0
-            app.globalData.userInfo=res.userInfo
-            console.log(app.globalData.userInfo)
-            wx.redirectTo({
-                url:'../index/index'
-            })
-          }
-        })
+  onHide:function(){
+    // 生命周期函数--监听页面隐藏
+    
+  },
+  onUnload:function(){
+    // 生命周期函数--监听页面卸载
+    
+  },
+  onShareAppMessage: function() {
+    // 用户点击右上角分享
+    return {
+      title: 'title', // 分享标题
+      desc: 'desc', // 分享描述
+      path: 'path' // 分享路径
+    }
+  },
+  login: function(e){
+    let that = this
+    wx.request({
+      url: 'http://wx.romeo.wang/home/login',
+      data: e.detail.value,
+      method: 'POST', 
+      header: {"content-type": "application/x-www-form-urlencoded"},
+      success: function(res){
+        // success
+        if(res.data.err){
+          that.setData({
+            msg: res.data.msg
+          })
+        }else{
+          app.globalData.userInfo = res.data.userInfo
+          wx.navigateBack({ delta: 1 })
+        }
+      }
+    })
+  },
+  wxlogin: function(){
+    wx.getUserInfo({
+      success: function(res){
+        // success
+        app.globalData.userInfo = {"nickname":res.userInfo.nickName, "avatar":res.userInfo.avatarUrl}
+        wx.navigateBack({ delta: 1 })
       }
     })
   }

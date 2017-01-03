@@ -1,53 +1,49 @@
 /* login.wxss */
+page{
+    background: url('http://wx.romeo.wang/public/home/pic/bg1.jpg') no-repeat;
+    background-size: 100% 100%;
+}
 .container {
-  background: url('https://romeo.wang/avatar/background.jpeg') no-repeat;
-  background-size: 100% 100%;
-  padding: 138rpx 0rpx;
+    padding-top: 200rpx;
 }
-.reminder {
-    width: 100%;
+.msg{
+    width: 90%;
     height: 80rpx;
-    /*border: red solid 1px;*/
-    text-align: center;
-    margin-bottom: 100rpx;
-}
-.section {
-    width: 80%;
-    height: 100%;
+    background: rgba(230, 230, 230, 0.5);
     margin: auto;
-    /*border: 1px solid green;*/
-    text-align: left;
+    border-radius: 20rpx;
+    text-align: center;
+    line-height: 80rpx;
+    color: red;
+}
+.section{
+    width: 90%;
+    height: 50%;
+    margin: auto;
+}
+.input-sect{
+    width: 100%;
+}
+.placeholder{
+    font-size: 1.2rem;
+    color: #999;
+    font-family: "微软雅黑";
+}
+input{
+    border-radius: 10rpx;
+    background: rgba(230, 230, 230, 0.5);
+    margin: 30rpx auto;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 1.35rem;
+    font-family: "Times New Roman";
     padding-left: 10rpx;
 }
-.input {
-    width: 100%;
-    height: 100rpx;
-    background: #fff;
-    font-size: 50rpx;
-    margin-top: 10rpx;
-    border-bottom: 1rpx solid black;
-    border-radius: 10rpx;
-    font-family: '微软雅黑';
-    opacity: 0.8;
-}
-.spacesect {
-    width: 100%;
-    height: 140rpx;
-}
-.butsect {
-    /*margin-top: 20rpx;*/
+.btn-sect{
+    width: 80%;
     margin: auto;
-    margin-bottom: 150rpx;
-    width: 60%;
-    /*border: 1px solid blue;*/
+    margin-top: 120rpx;
 }
-.but {
-    margin-top: 25rpx;
-}
-text {
-    font-size: 50rpx;
-    margin: 25rpx;
-}
-form {
-    width: 100%;
+.btn-sect button{
+    margin: 30rpx auto;
 }

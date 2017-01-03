@@ -1,16 +1,36 @@
 {
   "pages":[
+    "pages/profile/profile",
     "pages/login/login",
     "pages/index/index",
-    "pages/userinfo/userinfo",
-    "pages/goods/goods",
-    "pages/goodInfo/goodInfo",
-    "pages/purchase/purchase"
+    "pages/rank/rank",
+    "pages/msg/msg"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "Winnie The Pool",
+    "navigationBarTitleText": "青青子衿",
     "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "icons/index.png"
+    }, {
+      "pagePath": "pages/rank/rank",
+      "text": "排行",
+      "iconPath": "icons/rank.png"
+    },{
+      "pagePath": "pages/msg/msg",
+      "text": "消息",
+      "iconPath": "icons/msg.png"
+    },{
+      "pagePath": "pages/profile/profile",
+      "text": "我的",
+      "iconPath": "icons/profile.png"
+    }],
+    "backgroundColor": "black",
+    "selectedColor": "white"
   }
 }

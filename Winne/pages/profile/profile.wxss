@@ -1,0 +1,65 @@
+/* pages/profile/profile.wxss */
+.profile{
+    margin: 20rpx auto;
+    margin-top: 0rpx;
+    width: 100%;
+    height: 400rpx;
+    background: #fff;
+    text-align: center;
+}
+.profile image{
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
+    margin: 15rpx;
+    margin-top: 30rpx;
+}
+.profile text{
+    display: block;
+    margin: 15rpx auto;
+}
+.section{
+    margin: 20rpx auto;
+    width: 100%;
+}
+.section .menu{
+    width: 100%;
+    height: 100rpx;
+    background: #fff;
+    border-bottom: 1rpx solid #efefef;
+    line-height: 100rpx;
+}
+.section .menu .icon{
+    height: 60rpx;
+    width: 60rpx;
+    float: left;
+    margin: 20rpx;
+}
+.arrow-right{
+    background: url('../../icons/arrow-right.png') no-repeat;
+    background-size: 100% 100%;
+    float: right;
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 30rpx;
+    margin-top: 20rpx;
+    opacity: 0.5;
+}
+.menu .mypost{
+    background: url("../../icons/mypost.png") no-repeat;
+    background-size: 100% 100%;
+}
+.menu .myfavor{
+    background: url("../../icons/myfavor.png") no-repeat;
+    background-size: 100% 100%;
+}
+.menu .post{
+    background: url("../../icons/post.png") no-repeat;
+    background-size: 100% 100%;
+}
+.btn{
+    width: 80%;
+    margin: 30rpx auto;
+    background: #fff;
+    border-radius: 20rpx;
+}
