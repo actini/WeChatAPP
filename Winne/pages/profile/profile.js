@@ -16,13 +16,30 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo
     })
-    console.log(app.globalData.userInfo)
   },
   onHide:function(){
     // 页面隐藏
   },
   onUnload:function(){
     // 页面关闭
+  },
+  navigate:function(e){
+    //判断登陆状态：未登录用户以及微信用户无法跳转进入下级页面
+    if(app.globalData.userInfo == null){
+      wx.showModal({
+        title: '提示',
+        content: '您还未登录未登录！',
+        showCancel: false
+      })
+    }else if(app.globalData.userInfo.id == "weixin"){
+      wx.showModal({
+        title: '提示',
+        content: '微信登陆用户没有权限！',
+        showCancel: false
+      })
+    }else{
+      wx.navigateTo({url: e.currentTarget.dataset.url})
+    }
   },
   signin:function(){
     util.navigateTo({
@@ -39,6 +56,7 @@ Page({
           that.setData({
             userInfo: null
           })
+          wx.clearStorageSync()
           app.globalData.userInfo = null
         }
       }

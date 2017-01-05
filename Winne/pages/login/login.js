@@ -70,6 +70,7 @@ Page({
             msg: res.data.msg
           })
         }else{
+          wx.setStorageSync('userInfo', res.data.userInfo)
           app.globalData.userInfo = res.data.userInfo
           wx.navigateBack({ delta: 1 })
         }
@@ -79,8 +80,8 @@ Page({
   wxlogin: function(){
     wx.getUserInfo({
       success: function(res){
-        // success
-        app.globalData.userInfo = {"nickname":res.userInfo.nickName, "avatar":res.userInfo.avatarUrl}
+        app.globalData.userInfo = {"nickname":res.userInfo.nickName, "avatar":res.userInfo.avatarUrl, "id":"weixin"}
+        wx.setStorageSync('userInfo', app.globalData.userInfo)
         wx.navigateBack({ delta: 1 })
       }
     })

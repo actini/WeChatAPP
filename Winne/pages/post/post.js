@@ -1,18 +1,26 @@
-// pages/index/index.js
+// pages/post/post.js
 const util = require('../../utils/util.js')
 const app = getApp()
 Page({
   data:{
-    posts: null
+    post: null,
+    user: null,
+    pics: null
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
     let that = this
-    util.request({
-      url: 'http://wx.romeo.wang/home/index/show',
+    wx.request({
+      url: 'http://wx.romeo.wang/home/post/show?id=1',
       success: function(res){
+        // success
         that.setData({
-          posts: res.data
+          post: res.data.post,
+          user: res.data.user,
+          pics: res.data.pics
+        })
+        wx.setNavigationBarTitle({ 
+          title: res.data.post.title
         })
       }
     })

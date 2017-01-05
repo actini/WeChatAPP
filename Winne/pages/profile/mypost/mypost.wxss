@@ -1,4 +1,4 @@
-/* pages/index/index.wxss */
+/* pages/profile/mypost/mypost.wxss */
 .container{
     width: 100%;
 }

@@ -81,10 +81,52 @@ function getCurDate(){
     return currentdate;
 }
 
+/*
+ * 串行上传多个文件文件
+ * @param   Object  param
+ * @param   String  param.url
+ * @param   Array   param.files
+ * @param   String  param.name
+ * @param   Object  param.formData
+ * @return  void    
+ */
+function multiUpload(param, i=0){
+    wx.hideToast()
+    wx.showToast({
+      title: "第"+(i+1)+"张图片上传中…",
+      icon: "loading",
+      duration: 10000,
+      mask: true
+    })
+    wx.uploadFile({
+      url: param.url,
+      filePath: param.files[i],
+      name: param.name,
+      formData: param.formData,
+      success: function(res){
+        if(res.data.err){
+            multiUpload(param, i)
+        }else if(i < param.files.length-1){
+            i++
+            multiUpload(param, i)
+        }else{
+            wx.hideToast()
+            if(param.success != undefined)
+                param.success()
+            return
+        }
+      },
+      fail: function() {
+        multiUpload(param, i)
+      }
+    })
+}
+
 module.exports = {
 	randomString: randomString,
 	getDay: getDay,
 	doHandleMonth: doHandleMonth,
 	getCurTime: getCurTime,
 	getCurDate: getCurDate,
+    multiUpload: multiUpload
 }

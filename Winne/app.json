@@ -1,10 +1,14 @@
 {
   "pages":[
-    "pages/profile/profile",
-    "pages/login/login",
+    "pages/post/post",
     "pages/index/index",
+    "pages/profile/profile",
+    "pages/profile/post/post",
+    "pages/profile/mypost/mypost",
+    "pages/login/login",
     "pages/rank/rank",
-    "pages/msg/msg"
+    "pages/msg/msg",
+    "pages/post/post"
   ],
   "window":{
     "backgroundTextStyle":"light",

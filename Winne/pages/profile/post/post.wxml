@@ -1,0 +1,21 @@
+<!--pages/profile/post/post.wxml-->
+<view class="container">
+    <form bindsubmit="submit">
+        <view class="img-sect">
+            <block wx:for="{{imgs}}">
+                <image src="{{item}}" class="img"></image>
+            </block>
+            <image class="img-add" src="/icons/add.png" bindtap="uploadImg"></image>
+        </view>
+        <view class="title-sect">
+            <input name="title" value="{{title}}" placeholder="标题" placeholder-class="placeholder"/>
+        </view>
+        <view class="outline-sect">
+            <textarea name="outline" placeholder="简介" value="{{outline}}" placeholder-class="placeholder"/>
+        </view>
+        <view class="btn-sect">
+            <button type="primary" plain form-type="submit">发布</button>
+            <button type="warn" plain bindtap="reset">取消</button>
+        </view>
+    </form>
+</view>

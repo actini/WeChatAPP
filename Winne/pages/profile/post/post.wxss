@@ -1,0 +1,54 @@
+/* pages/profile/post/post.wxss */
+.container{
+    width: 90%;
+    margin: auto;
+}
+.img{
+    width: 200rpx;
+    height: 200rpx;
+    background: #fff;
+    margin: 30rpx 10rpx;
+    border-radius: 10rpx;
+}
+.img-add{
+    width: 200rpx;
+    height: 200rpx;
+    background: #fff;
+    margin: 30rpx 10rpx;
+    border-radius: 10rpx;
+    opacity: 0.5;
+}
+.placeholder{
+    font-size: 1.2rem;
+    color: #999;
+    font-family: "微软雅黑";
+}
+input{
+    width: 100%;
+    border-radius: 10rpx;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 30rpx auto;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 1.35rem;
+    font-family: "微软雅黑";
+    padding-left: 10rpx;
+}
+textarea{
+    width: 100%;
+    border-radius: 10rpx;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 30rpx auto;
+    line-height: 100rpx;
+    font-size: 1.35rem;
+    font-family: "微软雅黑";
+    padding-left: 10rpx;
+}
+.btn-sect{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-sect button{
+    margin: 30rpx auto;
+    width: 40%;
+}

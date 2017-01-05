@@ -82,4 +82,5 @@ module.exports = {
 	doHandleMonth: funcs.doHandleMonth,
 	getCurTime: funcs.getCurTime,
 	getCurDate: funcs.getCurDate,
+	multiUpload: funcs.multiUpload
 }

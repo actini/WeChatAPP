@@ -1,0 +1,19 @@
+<!--pages/post/post.wxml-->
+<view class="container">
+    <view class="header font-small">
+        <view class="avatar">
+            <image src="{{user.avatar}}"></image> 
+        </view>
+        {{user.nickname}} 发布于 {{post.ctime}}
+        <view class="like">
+            <image src="/icons/like.png"></image>
+            <view class="num">{{post.star}}</view>
+        </view>
+    </view>
+    <view class="pic">
+        <image mode="aspectFit" src="https://oj6nu6qqs.bkt.clouddn.com/{{pics[0] ? pics[1] : 'loading.gif'}}"></image>
+    </view>
+    <view class="outline">
+        {{post.outline}}
+    </view>
+</view>

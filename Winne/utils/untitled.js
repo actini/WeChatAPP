@@ -5,13 +5,6 @@
  * @DateTime 2016-12-22T18:09:51+0800
  */
 function request(param){
-	let app = getApp()
-	if(param.data){
-		param.data.openid = app.globalData.userInfo.openid
-		param.data.userid = app.globalData.userInfo.userid
-	}else{
-		param.data = {openid: app.globalData.userInfo.openid, userid: app.globalData.userInfo.userid}
-	}
 	wx.request({
 		url: param.url,
 		data: param.data,
@@ -19,25 +12,8 @@ function request(param){
 		method: param.method,
 		dataType: param.dataType,
 		success: function(res){
-            if(res.data !== null && res.data.signout){
-                //用户下线操作内容
-				app.globalData.signout = true
-                wx.showModal({
-                    title: '系统消息',
-                    content: res.data.msg,
-                    showCancel: false,
-                    confirmText: '重新登录',
-                    success: function(res){
-                        wx.switchTab({
-                            url: '/pages/index/index'
-                        })
-                    }
-                })
-               
-            }else{
-				if(param.success != undefined)
-                	param.success(res)
-            }
+			if(param.success != undefined)
+				param.success(res)
         },
 		fail: function(){
             wx.showModal({

@@ -36,7 +36,7 @@
     margin: 20rpx;
 }
 .arrow-right{
-    background: url('../../icons/arrow-right.png') no-repeat;
+    background: url('/icons/arrow-right.png') no-repeat;
     background-size: 100% 100%;
     float: right;
     width: 60rpx;
@@ -46,20 +46,18 @@
     opacity: 0.5;
 }
 .menu .mypost{
-    background: url("../../icons/mypost.png") no-repeat;
+    background: url("/icons/mypost.png") no-repeat;
     background-size: 100% 100%;
 }
 .menu .myfavor{
-    background: url("../../icons/myfavor.png") no-repeat;
+    background: url("/icons/myfavor.png") no-repeat;
     background-size: 100% 100%;
 }
 .menu .post{
-    background: url("../../icons/post.png") no-repeat;
+    background: url("/icons/post.png") no-repeat;
     background-size: 100% 100%;
 }
 .btn{
     width: 80%;
     margin: 30rpx auto;
-    background: #fff;
-    border-radius: 20rpx;
 }

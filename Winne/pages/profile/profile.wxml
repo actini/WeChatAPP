@@ -15,15 +15,15 @@
     </view>
 </view>
 <view class="section">
-    <view class="menu">
+    <view class="menu" data-url="/pages/profile/mypost/mypost" bindtap="navigate">
         <view class="icon mypost"></view> 我发布的 <view class="arrow-right"></view>
     </view>
-    <view class="menu">
+    <view class="menu" data-url="/pages/profile/post/post" bindtap="navigate">
         <view class="icon myfavor"></view> 我收藏的 <view class="arrow-right"></view>
     </view>
 </view>
 <view class="section">
-    <view class="menu">
+    <view class="menu" data-url="/pages/profile/post/post" bindtap="navigate">
         <view class="icon post"></view> 发布内容 <view class="arrow-right"></view>
     </view>
 </view>

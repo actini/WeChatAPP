@@ -1,2 +1,18 @@
 <!--pages/rank/rank.wxml-->
-<text>pages/rank/rank.wxml</text>
+<view class="container">
+    <view class="section font-small">
+        <block wx:for="{{posts}}">
+        <view class="post {{index % 2==0 ? 'post-r' : 'post-l'}}">
+            <image src="https://oj6nu6qqs.bkt.clouddn.com/{{pics[item.id]}}"></image>
+            <view class="info">
+                <view class="like">
+                    <image src="/icons/like.png"></image> {{item.star}}
+                </view>
+                <view class="ctime">
+                    {{item.ctime}}
+                </view>
+            </view>
+        </view>
+        </block>
+    </view>
+</view>
