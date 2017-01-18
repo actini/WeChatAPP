@@ -1,19 +1,25 @@
 <!--pages/post/post.wxml-->
+<view class="header font-small">
+  <view class="avatar">
+    <image src="{{user.avatar}}"></image>
+  </view>
+  {{user.nickname}}
+  <view class="like">
+    <image src="/icons/{{post.like == 1 ? 'like.png' : 'unlike.png'}}"></image>
+    <view class="num {{post.like == 1 ? 'like-num' : 'unlike-num'}}">{{post.star}}</view>
+  </view>
+</view>
 <view class="container">
-    <view class="header font-small">
-        <view class="avatar">
-            <image src="{{user.avatar}}"></image> 
-        </view>
-        {{user.nickname}} 发布于 {{post.ctime}}
-        <view class="like">
-            <image src="/icons/like.png"></image>
-            <view class="num">{{post.star}}</view>
-        </view>
-    </view>
-    <view class="pic">
-        <image mode="aspectFit" src="https://oj6nu6qqs.bkt.clouddn.com/{{pics[0] ? pics[1] : 'loading.gif'}}"></image>
-    </view>
-    <view class="outline">
-        {{post.outline}}
-    </view>
+  <swiper indicator-dots autoplay interval="3000" circular class="pic">
+    <block wx:for="{{pics}}">
+      <swiper-item>
+        <image src="https://oj6nu6qqs.bkt.clouddn.com/{{item ? item : 'loading.gif'}}" mode="scaleToFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="postTime font-small">作者发布于 {{post.ctime}}</view>
+  <view style="clear:both"></view>
+  <view class="outline">
+    {{post.outline}}
+  </view>
 </view>

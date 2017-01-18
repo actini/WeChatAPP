@@ -1,6 +1,5 @@
 {
   "pages":[
-    "pages/post/post",
     "pages/index/index",
     "pages/profile/profile",
     "pages/profile/post/post",

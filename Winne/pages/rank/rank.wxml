@@ -2,11 +2,11 @@
 <view class="container">
     <view class="section font-small">
         <block wx:for="{{posts}}">
-        <view class="post {{index % 2==0 ? 'post-r' : 'post-l'}}">
+        <view class="post {{index % 2==0 ? 'post-r' : 'post-l'}}" bindtap="showDetail" id="{{item.id}}">
             <image src="https://oj6nu6qqs.bkt.clouddn.com/{{pics[item.id]}}"></image>
             <view class="info">
                 <view class="like">
-                    <image src="/icons/like.png"></image> {{item.star}}
+                    <image src="/icons/{{item.like == 1 ? 'like.png' : 'unlike.png'}}"></image> {{item.star}}
                 </view>
                 <view class="ctime">
                     {{item.ctime}}

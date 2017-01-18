@@ -5,6 +5,12 @@
  * @DateTime 2016-12-22T18:09:51+0800
  */
 function request(param){
+	let app = getApp()
+	if(param.data){
+		param.data.uid = app.globalData.userInfo.id
+	}else{
+		param.data = {uid: app.globalData.userInfo.id}
+	}
 	wx.request({
 		url: param.url,
 		data: param.data,

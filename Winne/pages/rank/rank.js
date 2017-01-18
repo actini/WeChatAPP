@@ -24,11 +24,17 @@ Page({
   },
   onShow:function(){
     // 页面显示
+    console.log(this.data.posts)
   },
   onHide:function(){
     // 页面隐藏
   },
   onUnload:function(){
     // 页面关闭
+  },
+  showDetail:function(e){
+    wx.navigateTo({
+      url:"/pages/post/post?id="+e.currentTarget.id
+    })
   }
 })

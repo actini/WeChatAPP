@@ -1,6 +1,6 @@
 // pages/index/index.js
-const util = require('../../utils/util.js')
 const app = getApp()
+const util = require('../../utils/util.js')
 Page({
   data:{
     posts: null
@@ -28,5 +28,10 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  showDetail:function(e){
+    wx.navigateTo({
+      url:"/pages/post/post?id="+e.currentTarget.id
+    })
   }
 })

@@ -1,6 +1,6 @@
 //login.js
-var util = require('../../utils/util.js')
-var app = getApp()
+const util = require('../../utils/util.js')
+const app = getApp()
 Page({
   data:{
     msg: null,
