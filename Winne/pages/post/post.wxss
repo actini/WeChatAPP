@@ -66,7 +66,7 @@ page{
 .outline{
     width: 90%;
     margin: 0rpx auto;
-    line-height: 50rpx;
+    line-height: 65rpx;
     background: #fff;
     text-indent: 2rem;
 }

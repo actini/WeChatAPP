@@ -5,7 +5,7 @@
         <view class="post {{index % 2==0 ? 'post-r' : 'post-l'}}" bindtap="showDetail" id="{{index}}">
             <image src="https://oj6nu6qqs.bkt.clouddn.com/{{item.pic}}"></image>
             <view class="info">
-                <view class="like">
+                <view class="like" catchtap="like" id="{{index}}">
                     <image src="/icons/{{item.like == 1 ? 'like.png' : 'unlike.png'}}"></image> {{item.star}}
                 </view>
                 <view class="ctime">

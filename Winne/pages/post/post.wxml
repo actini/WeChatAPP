@@ -4,7 +4,7 @@
     <image src="{{user.avatar}}"></image>
   </view>
   {{user.nickname}}
-  <view class="like">
+  <view class="like" catchtap="like" id="{{post.id}}">
     <image src="/icons/{{post.like == 1 ? 'like.png' : 'unlike.png'}}"></image>
     <view class="num {{post.like == 1 ? 'like-num' : 'unlike-num'}}">{{post.star}}</view>
   </view>
