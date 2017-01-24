@@ -16,3 +16,6 @@ page{
 .font-small {
   font-size: 0.75rem;
 }
+.clear {
+  clear: both;
+}

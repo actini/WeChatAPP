@@ -4,10 +4,13 @@
     "pages/profile/profile",
     "pages/profile/post/post",
     "pages/profile/mypost/mypost",
+    "pages/profile/mylike/mylike",
     "pages/login/login",
     "pages/rank/rank",
     "pages/msg/msg",
-    "pages/post/post"
+    "pages/post/post",
+    "pages/user/user",
+    "pages/user/posts/posts"
   ],
   "window":{
     "backgroundTextStyle":"light",

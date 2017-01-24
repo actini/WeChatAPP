@@ -1,0 +1,18 @@
+<!--pages/profile/mylike/mylike.wxml-->
+<view class="container">
+    <view class="section font-small">
+        <block wx:for="{{posts}}">
+        <view class="post {{index % 2==0 ? 'post-r' : 'post-l'}}" bindtap="showDetail" id="{{item.id}}">
+            <image src="https://oj6nu6qqs.bkt.clouddn.com/{{item.pic}}"></image>
+            <view class="info">
+                <view class="like" catchtap="unlike" id="{{item.id}}">
+                    <image src="/icons/like.png"></image> {{item.star}}
+                </view>
+                <navigator url="/pages/user/user?userid={{item.uid}}" class="ctime">
+                    {{item.nickname}}
+                </navigator>
+            </view>
+        </view>
+        </block>
+    </view>
+</view>

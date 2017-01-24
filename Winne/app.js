@@ -10,6 +10,6 @@ App({
     }
   },
   globalData:{
-    userInfo:null
+    userInfo:{id:null}
   }
 })

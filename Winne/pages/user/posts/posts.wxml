@@ -1,4 +1,4 @@
-<!--pages/profile/mypost/mypost.wxml-->
+<!--pages/user/posts/posts.wxml-->
 <view class="container">
     <view class="section font-small">
         <block wx:for="{{posts}}">

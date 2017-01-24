@@ -1,26 +1,34 @@
-// pages/rank/rank.js
+// pages/user/user.js
 const util = require('../../utils/util.js')
 const app = getApp()
 Page({
   data:{
-    posts: null,
-    pics: null
+    userid: null,
+    userInfo: null,
+    posts: null
+  },
+  onLoad:function(options){
+    // 页面初始化 options为页面跳转所带来的参数
+    this.setData({
+      userid: options.userid
+    })
   },
   onShow:function(){
     // 页面显示
     let that = this
     util.request({
-      url: 'http://wx.romeo.wang/home/index/rank',
+      url: 'http://wx.romeo.wang/home/user/detail?userid='+that.data.userid,
       success: function(res){
+        // success
         that.setData({
-          posts: res.data.posts,
-          pics: res.data.pics
+          userInfo: res.data.userInfo,
+          posts: res.data.posts
         })
-      }
+      },
     })
   },
   showDetail:function(e){
-    wx.navigateTo({
+    util.navigateTo({
       url:"/pages/post/post?id="+e.currentTarget.id
     })
   },
@@ -34,14 +42,17 @@ Page({
         // success
         if(res.data.err == 0){
           let posts = that.data.posts
-          for(let i=0; i<posts.length; i++){
-            if(posts[i].id == pid){
-              posts[i]['like'] = res.data.like
-              posts[i]['star'] = res.data.star
-            }
+          let userInfo = that.data.userInfo
+          if(posts[pid].star > res.data.star){
+            userInfo.stars = parseInt(userInfo.stars)-1
+          }else{
+            userInfo.stars = parseInt(userInfo.stars)+1
           }
+          posts[pid].like = res.data.like
+          posts[pid].star = res.data.star
           that.setData({
-            posts: posts
+            posts: posts,
+            userInfo: userInfo
           })
           wx.showToast({
             title: res.data.msg,

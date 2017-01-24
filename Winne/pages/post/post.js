@@ -48,6 +48,7 @@ Page({
         if(res.data.err == 0){
           let post = that.data.post
           post.like = res.data.like
+          post.star = res.data.star
           that.setData({
             post: post
           })

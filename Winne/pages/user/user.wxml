@@ -1,0 +1,26 @@
+<!--pages/user/user.wxml-->
+<view class="profile">
+    <view>
+        <image src="{{userInfo.avatar}}"></image>
+        <text>{{userInfo.nickname}}</text>
+        <view class="statistics font-small">
+            <view class="pnum">发布 <text>{{userInfo.pnum}}</text> 个内容</view>
+            <view class="stars">收获 <text>{{userInfo.stars}}</text> 次收藏</view>
+        </view>
+    </view>
+</view>
+<block wx:for="{{posts}}">
+<view class="post font-small {{index % 2==0 ? 'post-r' : 'post-l'}}" bindtap="showDetail" id="{{index}}">
+    <image src="https://oj6nu6qqs.bkt.clouddn.com/{{item.pic}}"></image>
+    <view class="info">
+        <view class="like" catchtap="like" id="{{index}}">
+            <image src="/icons/{{item.like == 1 ? 'like.png' : 'unlike.png'}}"></image> {{item.star}}
+        </view>
+        <view class="ctime">
+            {{item.ctime}}
+        </view>
+    </view>
+</view>
+</block>
+<view class="clear"></view>
+<navigator url="/pages/user/posts/posts?userid={{userInfo.id}}"  class="view-more font-small" hover hover-class="view-more-hover">查看更多</navigator>

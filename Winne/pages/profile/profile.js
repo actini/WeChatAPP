@@ -5,23 +5,11 @@ Page({
   data:{
     userInfo: null
   },
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
-  },
-  onReady:function(){
-    // 页面渲染完成
-  },
   onShow:function(){
     // 页面显示
     this.setData({
       userInfo: app.globalData.userInfo
     })
-  },
-  onHide:function(){
-    // 页面隐藏
-  },
-  onUnload:function(){
-    // 页面关闭
   },
   navigate:function(e){
     //判断登陆状态：未登录用户以及微信用户无法跳转进入下级页面
