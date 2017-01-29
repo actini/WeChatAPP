@@ -82,7 +82,7 @@
 
 6. 小程序的上传和下载中只能获取文件的 `key`，开发者在服务器端通过 `key` 获取文件二进制内容。
 
-7. 小程序中的 wx.upload API 方法无法并行，多张上传时需在 success() 函数中递归调用 wx.upload 方法。
+7. 小程序中的 wx.upload API 方法无法并行调用，多张上传时需在 success() 函数中递归调用 wx.upload 方法。
 
 ```
 function multiUpload(param, i=0){
@@ -95,7 +95,7 @@ function multiUpload(param, i=0){
       duration: 10000,
       mask: true
     })
-    
+
     wx.uploadFile({
       url: param.url,
       filePath: param.files[i],
