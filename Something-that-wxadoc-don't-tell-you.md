@@ -86,13 +86,16 @@
 
 ```
 function multiUpload(param, i=0){
+
     wx.hideToast()
+
     wx.showToast({
       title: "第"+(i+1)+"张图片上传中…",
       icon: "loading",
       duration: 10000,
       mask: true
     })
+    
     wx.uploadFile({
       url: param.url,
       filePath: param.files[i],
