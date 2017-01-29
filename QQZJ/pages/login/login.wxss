@@ -1,6 +1,6 @@
 /* login.wxss */
 page{
-    background: url('http://wx.romeo.wang/public/home/pic/bg1.jpg') no-repeat;
+    background: url('https://oj6nu6qqs.bkt.clouddn.com/bg1.jpg') no-repeat;
     background-size: 100% 100%;
 }
 .container {

@@ -4,7 +4,7 @@
 
 1. 所有页面都需要在 `app.json` 文件中注册在 `pages` 数组中，注册格式为：`"路径/文件名"`
 
-	> 注：文件名无需添加扩展名
+> 注：文件名无需添加扩展名
 
 2. `app.josn` 中的 `pages` 数组中的第一个页面为小程序的启动页
 
@@ -81,6 +81,43 @@
 5. 小程序的本地缓存不能超过 10M
 
 6. 小程序的上传和下载中只能获取文件的 `key`，开发者在服务器端通过 `key` 获取文件二进制内容。
+
+7. 小程序中的 wx.upload API 方法无法并行，多张上传时需在 success() 函数中递归调用 wx.upload 方法。
+
+```
+function multiUpload(param, i=0){
+    wx.hideToast()
+    wx.showToast({
+      title: "第"+(i+1)+"张图片上传中…",
+      icon: "loading",
+      duration: 10000,
+      mask: true
+    })
+    wx.uploadFile({
+      url: param.url,
+      filePath: param.files[i],
+      name: param.name,
+      formData: param.formData,
+      success: function(res){
+        if(res.data.err){
+            multiUpload(param, i)
+        }else if(i < param.files.length-1){
+            i++
+            multiUpload(param, i)
+        }else{
+            wx.hideToast()
+            if(param.success != undefined)
+                param.success()
+            return
+        }
+      },
+      fail: function() {
+        multiUpload(param, i)
+      }
+    })
+}
+```
+> 详见[funcs.js](https://github.com/Romeo0906/WeChatAPP/blob/branch/QQZJ/utils/funcs.js)。
 
 ### 工具部分
 

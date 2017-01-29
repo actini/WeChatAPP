@@ -8,7 +8,7 @@
         </view>
     </view>
     <view hidden="{{userInfo}}">
-        <image src="http://wx.romeo.wang/public/home/pic/avatar-default.jpg"></image>
+        <image src="https://oj6nu6qqs.bkt.clouddn.com/default-avatar.jpg"></image>
         <view class="info">
             <text>未登录</text>
         </view>
