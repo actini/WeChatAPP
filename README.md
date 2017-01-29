@@ -32,4 +32,4 @@
 
 * 服务器文件与一般 web 开发的文件相同，本项目服务器为 PHP 脚本文件
 
-* 如需要服务器文件（*.php）请[微博](http://weibo.com/zijian000)私信我并留下邮箱，或者发送邮件至 [romeo0906@foxmail.com](romeo0906@foxmail.com)。
+* 如需要服务器文件（*.php）请[微博](http://weibo.com/zijian000)私信我并留下邮箱，或者发送邮件至 romeo0906@foxmail.com。
