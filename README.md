@@ -4,13 +4,15 @@
 
 * 小程序源码
 
-> 文件夹 Winne
+> QQZJ
 
 * 小程序开发技巧总结
 
 > Something-that-wxadoc-don't-tell-you.md
 
-* 项目说明文档
+* 项目文件结构
+
+> FileStructure.md
 
 ## 使用说明：
 
@@ -30,4 +32,4 @@
 
 * 服务器文件与一般 web 开发的文件相同，本项目服务器为 PHP 脚本文件
 
-* 如需要服务器文件（*.php）请[微博](http://weibo.com/zijian000)私信我，并留下邮箱
+* 如需要服务器文件（*.php）请[微博](http://weibo.com/zijian000)私信我并留下邮箱，或者发送邮件至 [romeo0906@foxmail.com](romeo0906@foxmail.com)。
