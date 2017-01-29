@@ -1,13 +1,13 @@
 <!--pages/profile/profile.wxml-->
 <view class="profile">
-    <view hidden="{{!userInfo}}">
+    <view hidden="{{!userInfo.id}}">
         <image src="{{userInfo.avatar}}"></image>
         <view class="info">
             <text class="name">欢迎你</text>
             <text class="signature">{{userInfo.nickname}}</text>
         </view>
     </view>
-    <view hidden="{{userInfo}}">
+    <view hidden="{{userInfo.id}}">
         <image src="https://oj6nu6qqs.bkt.clouddn.com/default-avatar.jpg"></image>
         <view class="info">
             <text>未登录</text>
@@ -28,6 +28,6 @@
     </view>
 </view>
 <view class="btn">
-    <button type="warn" plain hidden="{{!userInfo}}" bindtap="signout">退出登录</button>
-    <button type="primary" plain hidden="{{userInfo}}" bindtap="signin">登陆</button>
+    <button type="warn" plain hidden="{{!userInfo.id}}" bindtap="signout">退出登录</button>
+    <button type="primary" plain hidden="{{userInfo.id}}" bindtap="signin">登陆</button>
 </view>

@@ -13,10 +13,10 @@ Page({
   },
   navigate:function(e){
     //判断登陆状态：未登录用户以及微信用户无法跳转进入下级页面
-    if(app.globalData.userInfo == null){
+    if(app.globalData.userInfo.id == null){
       wx.showModal({
         title: '提示',
-        content: '您还未登录未登录！',
+        content: '您还未登录！',
         showCancel: false
       })
     }else if(app.globalData.userInfo.id == "weixin"){
